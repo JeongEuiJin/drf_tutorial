@@ -16,7 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^snippets/',include('snippets.urls')),
+    url(r'^$', views.Index.as_view(),name='snippet-list'),
+    url(r'^snippets/', include('snippets.urls')),
+
 ]

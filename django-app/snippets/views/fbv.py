@@ -6,7 +6,11 @@ from rest_framework.renderers import JSONRenderer
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
 
-
+__all__ = (
+    'JSONResponse',
+    'snippet_list',
+    'snippet_detail',
+)
 class JSONResponse(HttpResponse):
     """
     콘텐츠를 JSON으로 변환한 후 HttpResponse 형태로 반환합니다.
